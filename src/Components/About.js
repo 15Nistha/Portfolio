@@ -1,10 +1,14 @@
 import './CSS/About.css'
-import profile from './Image/profile.jpg';
+import profile from './Image/profile3.jpg';
+import React from 'react';
+import Drop from './Drop';
 
 function About(props){
     return(
-        <div className='a1'>
-            
+        <div>
+                <Drop name='Nistha Patel' />
+
+         <div className='a1' id='a1'>   
         <div className="about" id="about">
             <h2>About</h2>
             <div className="imgabout">
@@ -47,6 +51,7 @@ function About(props){
                 <h4>Objective:</h4>
                 <p>To become a successful, expert in the field of computer Science by channelizing my technical knowledge and skills to ensure personal and professional growth and to contribute to the prosperity of the organization. To seek challenging avenues where my technical skills and engineering experience will match. I am Willing to work in a dynamic environment, while being able to make a significant contribution.</p>
             </div>
+        </div>
         </div>
         </div>
     )

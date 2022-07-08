@@ -1,12 +1,26 @@
 import './CSS/Drop.css';
-import profile from './Image/profile.jpg';
-import {FaFacebookSquare, FaLinkedin, FaTwitterSquare, FaInstagramSquare} from "react-icons/fa";
+// import profile from './Image/profile.jpg';
+import { FaBars, FaTimes} from "react-icons/fa";
+import React, { useRef } from 'react';
+import {Link} from 'react-router-dom';
+
 
  
 function Drop(props){
     
+const barRef = useRef();
+
+const showBar = () =>{
+    barRef.current.classList.toggle("responsive_nav");
+}
+
     return(
-        <div className="drop">
+        <div >
+            {/* <div className='drop' ref={barRef}>
+            <button className='button close-btn' onClick={showBar}>
+                <FaTimes size={25} />
+            </button>
+            <div className='fullscreen'>
             <div className="img">
                 <img src={profile} alt='profile' className='proimg' />
            </div>
@@ -29,9 +43,44 @@ function Drop(props){
             <li><a href="#resume" className='btn'>Resume</a></li>
             <li><a href="#contact" className='btn'>Contact</a></li>
             </ul></div>            
+        </div>
+        </div> */}
+
+        {/* <div className='smallscreen'>
+            <button className='button' onClick={showBar}>
+              <a href='drop1.js' ><FaBars size={25} /></a> 
+            </button>
+
+        </div> */}
 
 
-           </div>
+            <header>
+                <div className="img">
+                    {/* <img src={profile} alt='profile' className='proimg' /> */}
+                    <div className='name'>{props.name}</div>
+                </div>
+                
+
+                <nav ref={barRef}>
+                    <button className='btn active' onClick={showBar}><Link to="/">Home</Link></button>
+
+                    <button className='btn' onClick={showBar}><Link to="/about" >About</Link></button>
+
+                    <button className='btn' onClick={showBar}><Link to="/resume" >Resume</Link></button>
+
+                    <button className='btn' onClick={showBar}><Link to="/contact" >Contact</Link></button>
+                    
+                    <button className='button close-btn' onClick={showBar}>
+                    <FaTimes size={25} />
+                    </button>
+                </nav>
+                <button className='button' onClick={showBar}>
+                    <FaBars size={25} /> 
+                </button>
+            </header>
+
+
+        </div>
     )
 }
 

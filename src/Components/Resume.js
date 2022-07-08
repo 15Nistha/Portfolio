@@ -1,8 +1,13 @@
 import './CSS/Resume.css';
-
+import React from 'react';
+import Drop from './Drop';
 function Resume(props){
     return(
-        <div className="resume" id="resume"> 
+        <div > 
+        <Drop name='Nistha Patel' />
+
+        <div className="res" id="res">
+        <div className='resume' >
             <h2>Resume</h2>
             <p>To become a successful expert in the field of computer engineering by channelizing my technical knowledge and skills to ensure personal and professional growth and to contribute to the prosperity of the organization.</p>
 
@@ -72,19 +77,22 @@ function Resume(props){
                     </ul></div>
 
                     <div>
-                        <h3 className="summary">Project</h3>
+                    <h3 className="education">Projects</h3>
+                        <h4 className="resumehead"><ul><li>{props.head}</li></ul></h4>
 
-                        <h4 className="resumehead"><ul><li><span className="prohead">{props.head}</span></li></ul></h4>
+                        <ul className='bach'>
+                        <li>{props.prodetail}</li></ul>
 
-                        <p className='projectdetail'>{props.prodetail}</p>
+                        <h4 className="resumehead"><ul><li>{props.head1}</li></ul></h4>
 
-                        <h4 className="resumehead"><ul><li><span className="prohead">{props.head1}</span></li></ul></h4>
-                        
-                        <p className='projectdetail'>{props.prodetail1}</p>
+                        <ul className='bach'>
+                        <li>{props.prodetail1}</li></ul>
+
                     </div>
 
+
                     <div>
-                        <h3 className="summary">Other</h3>
+                        <h3 className="education">Other</h3>
 
                         <h4 className="resumehead"><ul><li><span className="ortherhead">Co-Curricular Activities</span></li></ul></h4>
                         
@@ -102,9 +110,9 @@ function Resume(props){
                         </ul>
                     </div>
                 </div>
-
             </div>
-
+            </div>
+            </div>
         </div>
     )
 }
